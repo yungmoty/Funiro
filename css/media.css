@@ -1,0 +1,73 @@
+/* === DESKTOP FIRST === */
+
+/* xl <= Extra extra large (xxl) */
+@media (max-width: 1400px) {
+	[class*="__container"] {
+	}
+}
+
+/* lg <= Extra large (xl) */
+@media (max-width: 1200px) {
+	[class*="__container"] {
+		max-width: 970px;
+	}
+}
+
+/* md <= Large (lg) */
+@media (max-width: 991.98px) {
+	[class*="__container"] {
+		max-width: 750px;
+	}
+}
+
+/* sm <= Medium (md) */
+@media (max-width: 767.98px) {
+	[class*="__container"] {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+/* xs <= Small (sm) */
+@media (max-width: 479.98px) {
+	[class*="__container"] {
+	}
+}
+
+/* === MOBILE FIRST === */
+
+/* Custom (xs) */
+@media (min-width: 0) {
+	[class*="__container"] {
+	}
+}
+
+/* Small (sm) */
+@media (min-width: 576px) {
+	[class*="__container"] {
+	}
+}
+
+/* Medium (md) */
+@media (min-width: 768px) {
+	[class*="__container"] {
+	}
+}
+
+/* Large (lg) */
+@media (min-width: 992px) {
+	[class*="__container"] {
+	}
+}
+
+/* Extra large (xl) */
+@media (min-width: 1200px) {
+	[class*="__container"] {
+	}
+}
+
+/* Extra extra large (xxl) */
+@media (min-width: 1400px) {
+	[class*="__container"] {
+	}
+}

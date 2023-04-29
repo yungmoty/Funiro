@@ -1,0 +1,102 @@
+/* USER VARIABLES SECTION */
+
+:root {
+	/* 						==Media== 						*/
+	--minWidth: 320px;
+	--maxWidth: 1440px;
+	--maxWidthContainer: 1270px;
+	--md1: var(--maxWidthContainer) + 15px;
+	--md2: 991.98px;
+	--md3: 767.98px;
+	--md4: 479.98px;
+	/* ---------------------------------------------*/
+	/* 						==Color== 						*/
+	--color1: #e89f71;
+	--color2: #898989;
+	--color3: #616161;
+	/* ---------------------------------------------*/
+	/* 						==Text== 						*/
+	--mainColorText: #3a3a3a;
+	--regular-text: 16px;
+	--lineheight: 1.65;
+	/* ---------------------------------------------*/
+	/* 						==Fonts== 						*/
+	--userfont: "Gilroy";
+	--systemfont: ;
+	/* ---------------------------------------------*/
+}
+/* ==================================================================== */
+
+/* FONTS LOAD SECTION */
+@font-face {
+	src: url("../fonts/Gilroy-Bold.woff2") format("woff2");
+	font-family: "Gilroy";
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	src: url("../fonts/Gilroy-Semibold.woff2") format("woff2");
+	font-family: "Gilroy";
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	src: url("../fonts/Gilroy-Medium.woff2") format("woff2");
+	font-family: "Gilroy";
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	src: url("../fonts/Gilroy-Regular.woff2") format("woff2");
+	font-family: "Gilroy";
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	src: url("../fonts/icons.woff") format("woff");
+	font-family: "icons";
+	font-weight: 400;
+	font-style: normal;
+}
+/* ==================================================================== */
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder {
+	color: #666;
+}
+::selection {
+	color: #fff;
+}
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+	border-color: red;
+}
+input:required:valid,
+textarea:required:valid {
+	border-color: green;
+}
+
+body {
+	font-family: var(--userfont);
+	font-size: var(--regular-text);
+	/* line-height: var(--lineheight); */
+	color: var(--text);
+}
+body._lock {
+	overflow: hidden;
+}
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+[class*="__container"] {
+	max-width: var(--maxWidthContainer);
+	padding: 0 15px; /* При добавлении отступов нужно добавить 30px к контейнеру */
+	margin: 0 auto;
+}
+/* ==================================================================== */
+
+/* USER STYLES */
