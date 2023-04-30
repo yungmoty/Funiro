@@ -290,3 +290,29 @@ body._lock {
 }
 .icon-menu {
 }
+
+/* .accordion ._accordion-content {
+	height: 0;
+	visibility: hidden;
+	font-size: 25px;
+	text-align: center;
+	background-color: #ccc;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	margin-bottom: 30px;
+}
+.accordion ._accordion-content .menu__sub-link {
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+.accordion ._accordion-title {
+	cursor: pointer;
+	height: 60px;
+	font-size: 30px;
+	text-align: center;
+} */
+/* .accordion .visible {
+	visibility: hidden;
+} */

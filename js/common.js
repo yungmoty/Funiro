@@ -46,8 +46,36 @@ window.addEventListener('DOMContentLoaded', function () {
 		//\\search\\//
 		if (targetElement.classList.contains('search-form__icon')) {
 			document.querySelector('.search-form').classList.toggle('_active');
-		} else if (!targetElement.closest('search-form') && document.querySelector('.search-form._active'))
+		} else if (!targetElement.closest('search-form') && document.querySelector('.search-form._active')) {
 			document.querySelector('.search-form').classList.remove('_active');
+		}
+
+		//\\accordion\\//
+		if (window.innerWidth < 768) {
+			if (targetElement.className === 'menu__arrow _icon-arrow-down _accordion-title') {
+				let accordionTitle = document.getElementsByClassName("_accordion-title");
+				let accordionContent = document.getElementsByClassName("_accordion-content");
+
+				for (let i = 0; i < accordionTitle.length; i++) {
+					if (accordionTitle[i] === targetElement) {
+						if (accordionContent[i].style.visibility === "hidden") {
+							hideAcordian();
+							accordionContent[i].style.height = "100%";
+							accordionContent[i].style.visibility = "visible";
+						} else {
+							hideAcordian();
+						}
+					}
+				}
+			}
+		}
+		function hideAcordian() {
+			let accordionContent = document.getElementsByClassName("_accordion-content");
+			for (let i = 0; i < accordionContent.length; i++) {
+				accordionContent[i].style.height = "0";
+				accordionContent[i].style.visibility = "hidden";
+			}
+		}
 	}
 });
 
@@ -58,3 +86,22 @@ function removeClasses(element, className) {
 		element[index].classList.remove(className);
 	}
 }
+
+// window.addEventListener("resize", function () {
+// 	if (document.documentElement.clientWidth > 768) {
+// 		document.querySelector('.go').classList.remove('accordion');
+// 	}
+// 	else {
+// 		document.querySelector('.go').classList.add('accordion');
+// 	}
+// }, true);
+// function hideAcordian() {
+// 	let accordionContent = document.getElementsByClassName("_accordion-content");
+// 	for (let i = 0; i < accordionContent.length; i++) {
+// 		accordionContent[i].style.height = "0";
+// 		accordionContent[i].style.visibility = "hidden";
+// 	}
+// }
+// if (window.innerWidth < 768) {
+// 	hideAcordian()
+// }
