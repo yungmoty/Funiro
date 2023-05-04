@@ -65,6 +65,43 @@
 	.search-form {
 		margin-right: 15px;
 	}
+	.menu__body {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		top: 0;
+		left: 0;
+		background-color: #fcf8f3;
+		transition: left 0.3s ease 0s;
+		padding: 70px 15px 30px 15px;
+	}
+	.menu__arrow {
+		font-size: 14px;
+	}
+	.menu__list > .menu__item._active .menu__sub-list {
+		opacity: 1;
+		padding: 10px 20px;
+	}
+	.menu__link {
+		font-size: 24px;
+		font-weight: 600;
+	}
+	.menu__sub-list {
+		/* position: relative; */
+		background-color: var(--color1);
+		transition: all 0.3s ease 0s;
+		will-change: max-height;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		padding: 10px 20px;
+		opacity: 0;
+	}
+	.menu__sub-link {
+		font-size: 20px;
+		color: #fff;
+	}
 }
 
 /* xs <= Small (--md4) */

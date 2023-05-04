@@ -41,14 +41,37 @@ window.addEventListener('DOMContentLoaded', function () {
 				removeClasses(document.querySelectorAll('.menu__item._hover'), '_hover');
 			}
 		}
-		//\\hover menu//\\
+		//\\hover menu//\\		
 
 		//\\search\\//
 		if (targetElement.classList.contains('search-form__icon')) {
 			document.querySelector('.search-form').classList.toggle('_active');
 		} else if (!targetElement.closest('search-form') && document.querySelector('.search-form._active'))
 			document.querySelector('.search-form').classList.remove('_active');
+		//\\search//\\
 	}
+
+	//\\accordion\\//
+	if (isMobile.any()) {
+		const accordions = document.querySelectorAll('._accordion');
+
+		accordions.forEach(element => {
+			element.addEventListener('click', (e) => {
+				const target = e.currentTarget;
+				let menuArrow = target.querySelector('.menu__arrow');
+				let menuSubList = target.querySelector('.menu__sub-list');
+
+				menuArrow.parentElement.classList.toggle('_active')
+
+				if (menuArrow.parentElement.classList.contains('_active')) {
+					menuSubList.style.maxHeight = menuSubList.scrollHeight + 'px';
+				} else {
+					menuSubList.style.maxHeight = null;
+				}
+			});
+		})
+	}
+	//\\accordion//\\
 });
 
 
