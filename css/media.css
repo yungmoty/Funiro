@@ -304,4 +304,7 @@
 	.menu-footer__link:hover {
 		color: var(--color1);
 	}
+	.subscribe__button:hover {
+		background-color: #e9945f;
+	}
 }

@@ -375,11 +375,27 @@ body._lock {
 .subscribe__title {
 }
 .subscribe__form {
+	display: flex;
+	position: relative;
 }
 .subscribe__input {
 	width: 100%;
+	padding: 0 12px;
+	background: #f3f5f7;
+	font-size: 16px;
+	color: #828282;
 }
 ._required {
 }
 .subscribe__button {
+	flex: 0 0 45px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	background-color: var(--color1);
+	color: #fff;
+	margin: 0px 0px 0px 4px;
+	transition: background-color 0.3s ease 0s;
 }
