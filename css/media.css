@@ -76,12 +76,22 @@
 		transition: left 0.3s ease 0s;
 		padding: 70px 15px 30px 15px;
 	}
+	.menu__body::before {
+		content: "";
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		top: 0;
+		left: 0;
+		background-color: #fcf8f3;
+		transition: left 0.3s ease 0s;
+		z-index: 2;
+	}
 	.menu__arrow {
 		font-size: 14px;
 	}
 	.menu__list > .menu__item._active .menu__sub-list {
 		opacity: 1;
-		padding: 10px 20px;
 	}
 	.menu__link {
 		font-size: 24px;
@@ -90,17 +100,27 @@
 	.menu__sub-list {
 		/* position: relative; */
 		background-color: var(--color1);
-		transition: all 0.3s ease 0s;
+		transition: all 0.4s ease 0s;
 		will-change: max-height;
 		max-height: 0;
 		opacity: 0;
 		overflow: hidden;
-		padding: 10px 20px;
+		padding: 6px 20px;
 		opacity: 0;
+		margin: 0px -15px;
 	}
 	.menu__sub-link {
 		font-size: 20px;
 		color: #fff;
+	}
+	.menu__link {
+		margin: 0px 0px 10px 0px;
+	}
+	.menu__sub-item:not(:last-child) {
+		margin: 0px 0px 10px 0px;
+	}
+	._accordion._active .menu__arrow {
+		transform: rotate(-180deg);
 	}
 }
 
@@ -151,13 +171,13 @@
 		top: 100%;
 		z-index: 5;
 	}
-	._hover.menu__item:hover .menu__sub-list {
+	._hover.menu__item .menu__sub-list {
 		transform: translate(0, 0);
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
 	}
-	._hover.menu__item:hover .menu__arrow {
+	._hover.menu__item .menu__arrow {
 		transform: rotate(-180deg);
 	}
 	._hover .menu__arrow,
@@ -212,5 +232,8 @@
 	}
 	.cart-header__icon:hover {
 		color: var(--color1);
+	}
+	.menu__sub-link:hover {
+		text-decoration: underline;
 	}
 }
