@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		//\\search\\//
 		if (targetElement.classList.contains('search-form__icon')) {
 			document.querySelector('.search-form').classList.toggle('_active');
-		} else if (!targetElement.closest('search-form') && document.querySelector('.search-form._active'))
+		} else if (!targetElement.closest('.search-form') && document.querySelector('.search-form._active'))
 			document.querySelector('.search-form').classList.remove('_active');
 		//\\search//\\
 	}
@@ -72,6 +72,18 @@ window.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 	//\\accordion//\\
+
+	//\\burger\\//
+	const iconMenu = document.querySelector('.icon-menu');
+	const menuBody = document.querySelector('.menu__body');
+	if (iconMenu) {
+		iconMenu.addEventListener('click', function (e) {
+			document.body.classList.toggle('_lock');
+			iconMenu.classList.toggle('_active');
+			menuBody.classList.toggle('_active');
+		});
+	}
+	//\\burger//\\
 });
 
 

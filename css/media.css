@@ -71,7 +71,7 @@
 		height: 100%;
 		overflow: auto;
 		top: 0;
-		left: 0;
+		left: -100%;
 		background-color: #fcf8f3;
 		transition: left 0.3s ease 0s;
 		padding: 70px 15px 30px 15px;
@@ -82,10 +82,16 @@
 		width: 100%;
 		height: 50px;
 		top: 0;
-		left: 0;
+		left: -100%;
 		background-color: #fcf8f3;
 		transition: left 0.3s ease 0s;
 		z-index: 2;
+	}
+	.menu__body._active {
+		left: 0;
+	}
+	.menu__body._active::before {
+		left: 0;
 	}
 	.menu__arrow {
 		font-size: 14px;
@@ -122,6 +128,43 @@
 	._accordion._active .menu__arrow {
 		transform: rotate(-180deg);
 	}
+	.icon-menu {
+		margin-left: 20px;
+		position: relative;
+		display: block;
+		flex: 0 0 30px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+	}
+	.icon-menu span {
+		transition: all 0.3s ease 0s;
+		top: calc(50% - 1px);
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #000;
+	}
+	.icon-menu span:first-child {
+		top: 0px;
+	}
+	.icon-menu span:last-child {
+		top: auto;
+		bottom: 0px;
+	}
+	.icon-menu._active span {
+		transform: scale(0) translate(0px, -50%);
+	}
+	.icon-menu._active span:first-child {
+		top: 50%;
+		transform: rotate(-45deg) translate(0px, -50%);
+	}
+	.icon-menu._active span:last-child {
+		bottom: 50%;
+		transform: rotate(45deg) translate(0px, 50%);
+	}
 }
 
 /* xs <= Small (--md4) */
@@ -133,6 +176,9 @@
 	}
 	.search-form {
 		margin-right: 5px;
+	}
+	.icon-menu {
+		margin-left: 10px;
 	}
 }
 
