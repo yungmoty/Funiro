@@ -44,6 +44,11 @@
 	.header__body {
 		min-height: 80px;
 	}
+	.footer__body {
+		padding-top: 50px;
+		padding-bottom: 45px;
+		column-gap: 50px;
+	}
 }
 
 /* sm <= Medium (--md3) */
@@ -164,6 +169,14 @@
 	.icon-menu._active span:last-child {
 		bottom: 50%;
 		transform: rotate(45deg) translate(0px, 50%);
+	}
+	.footer-title {
+		font-size: 20px;
+	}
+	.footer__body {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		column-gap: 30px;
 	}
 }
 
