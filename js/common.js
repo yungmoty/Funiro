@@ -84,6 +84,50 @@ window.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 	//\\burger//\\
+
+	//\\form\\//
+	const form = document.getElementById('form');
+
+	form.addEventListener('submit', function formSend(e) {
+		e.preventDefault()
+
+		formValidate(form)
+	});
+
+	function formValidate(form) {
+		let error = 0
+		const input = document.querySelector('._required');
+
+		formRemoveError(input)
+
+		if (input.classList.contains('_email')) {
+			if (emailTest(input)) {
+				formAddError(input);
+				error++;
+			}
+		} else {
+			if (input.value === '') {
+				formAddError(input);
+				error++;
+			}
+		}
+		return error
+	}
+
+	function formAddError(input) {
+		input.parentElement.classList.add('_error')
+		input.classList.add('_error')
+	}
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error')
+		input.classList.remove('_error')
+	}
+
+	// test email
+	function emailTest(input) {
+		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value)
+	}
+	//\\form//\\
 });
 
 

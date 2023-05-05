@@ -378,6 +378,15 @@ body._lock {
 	display: flex;
 	position: relative;
 }
+.subscribe__form._error::after {
+	content: "Error";
+	position: absolute;
+	top: 100%;
+	margin: 3px 0px 0px 0px;
+	left: 12px;
+	color: red;
+	font-size: 12px;
+}
 .subscribe__input {
 	width: 100%;
 	padding: 0 12px;
