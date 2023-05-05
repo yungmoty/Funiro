@@ -318,7 +318,7 @@ body._lock {
 	font-weight: 700;
 }
 .footer__text {
-	color: var(--color2);
+	color: var(--color3);
 	line-height: 150%;
 }
 .footer__text:not(:last-child) {
@@ -335,7 +335,7 @@ body._lock {
 	display: inline-flex;
 	align-items: center;
 	line-height: 150%;
-	color: var(--color2);
+	color: var(--color3);
 	transition: color 0.3s ease 0s;
 }
 .contacts-footer__item span {
@@ -354,10 +354,19 @@ body._lock {
 .menu-footer__column {
 }
 .menu-footer__title {
+	cursor: default;
+	margin: 0px 0px 16px 0px;
 }
 .menu-footer__list {
 }
+.menu-footer__list li:not(:last-child) {
+	margin: 0px 0px 15px 0px;
+}
 .menu-footer__link {
+	color: var(--color3);
+	transition: color 0.3s ease 0s;
+	line-height: 120%;
+	font-weight: 500;
 }
 .footer__subscribe {
 }

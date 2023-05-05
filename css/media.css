@@ -243,6 +243,12 @@
 	._hover .menu__link {
 		color: var(--color1);
 	}
+	.menu-footer {
+		display: flex;
+	}
+	.menu-footer__column {
+		flex: 0 1 33.333%;
+	}
 }
 
 /* Large (--md2) */
@@ -294,5 +300,8 @@
 	}
 	.menu__sub-link:hover {
 		text-decoration: underline;
+	}
+	.menu-footer__link:hover {
+		color: var(--color1);
 	}
 }
