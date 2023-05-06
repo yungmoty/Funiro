@@ -355,7 +355,10 @@ body._lock {
 }
 .menu-footer__title {
 	cursor: default;
-	margin: 0px 0px 16px 0px;
+}
+.menu-footer__title span {
+	display: none;
+	opacity: 0;
 }
 .menu-footer__list {
 }
@@ -373,6 +376,7 @@ body._lock {
 .subscribe {
 }
 .subscribe__title {
+	margin-bottom: 1em;
 }
 .subscribe__form {
 	display: flex;

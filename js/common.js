@@ -60,13 +60,25 @@ window.addEventListener('DOMContentLoaded', function () {
 				const target = e.currentTarget;
 				let menuArrow = target.querySelector('.menu__arrow');
 				let menuSubList = target.querySelector('.menu__sub-list');
+				let menuFooter = target.querySelector('.menu-footer__title');
+				let menuFooterList = target.querySelector('.menu-footer__list');
 
-				menuArrow.parentElement.classList.toggle('_active')
+				if (target.querySelector('.menu__arrow')) {
+					menuArrow.parentElement.classList.toggle('_active');
 
-				if (menuArrow.parentElement.classList.contains('_active')) {
-					menuSubList.style.maxHeight = menuSubList.scrollHeight + 'px';
-				} else {
-					menuSubList.style.maxHeight = null;
+					if (menuArrow.parentElement.classList.contains('_active')) {
+						menuSubList.style.maxHeight = menuSubList.scrollHeight + 'px';
+					} else {
+						menuSubList.style.maxHeight = null;
+					}
+				} else if (target.querySelector('.menu-footer__title')) {
+					menuFooter.parentElement.classList.toggle('_active');
+
+					if (menuFooter.parentElement.classList.contains('_active')) {
+						menuFooterList.style.maxHeight = menuFooterList.scrollHeight + 'px';
+					} else {
+						menuFooterList.style.maxHeight = null;
+					}
 				}
 			});
 		})
