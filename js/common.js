@@ -140,6 +140,35 @@ window.addEventListener('DOMContentLoaded', function () {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value)
 	}
 	//\\form//\\
+
+	//\\swiper\\//
+	if (document.querySelector('.slider__body')) {
+		new Swiper('.slider__body', {
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 32,
+			watchOverflow: true,
+			speed: 800,
+			loop: true,
+			loopAdditionalSlides: 5,
+			preloadImages: false,
+			parallax: true,
+			// Dotts
+			pagination: {
+				el: '.controls__dotts',
+				clickable: true,
+			},
+			// Arrows
+			navigation: {
+				prevEl: '.slider .slider-arrow_prev',
+				nextEl: '.slider .slider-arrow_next',
+			},
+		})
+	};
+
+
+	//\\swiper//\\
 });
 
 
