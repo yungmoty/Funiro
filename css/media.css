@@ -376,6 +376,9 @@
 		background: rgba(255, 255, 255, 0.72);
 		backdrop-filter: blur(31px);
 	}
+	.main-slider__slider {
+		padding: 0px 0px 0px 32px;
+	}
 }
 
 /* Extra large (xl) */
@@ -424,5 +427,13 @@
 	}
 	.content-main__button:hover {
 		background-color: #ee8e53;
+	}
+	.slider-arrow:hover {
+		color: #fff;
+		background: var(--color1);
+	}
+	.slider-arrow_white:hover {
+		color: #fff;
+		background: var(--color1);
 	}
 }
