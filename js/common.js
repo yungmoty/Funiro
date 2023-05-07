@@ -147,7 +147,7 @@ window.addEventListener('DOMContentLoaded', function () {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			// spaceBetween: 32,
+			spaceBetween: 32,
 			watchOverflow: true,
 			speed: 800,
 			loop: true,
