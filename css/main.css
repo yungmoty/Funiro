@@ -652,23 +652,10 @@ body._lock {
 }
 
 /* ================== */
-.content-main__title {
-	font-size: 56px;
-}
-.content-main__text {
-	font-size: 20px;
-}
-.content-main__button {
-	min-height: 78px;
-	font-size: 20px;
-}
 .slider__content {
 	min-width: 295px;
 	max-height: 300px;
 	padding: 24px;
-}
-.main-slider__content {
-	margin-bottom: 80px;
 }
 .slider__title {
 	font-size: 28px;
