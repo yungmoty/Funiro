@@ -149,6 +149,9 @@
 	.main-title {
 		font-size: 30px;
 	}
+	.cart-header__body {
+		top: 50px;
+	}
 }
 
 /* sm <= Medium (--md3) */
@@ -392,6 +395,12 @@
 	}
 	.item-product__price {
 		font-size: 18px;
+	}
+	.cart-header__body {
+		position: fixed;
+		top: 50px;
+		left: 0;
+		width: 100%;
 	}
 }
 
@@ -655,6 +664,12 @@
 	.item-product:hover .actions {
 		opacity: 1;
 		visibility: visible;
+	}
+	.cart-list__title:hover {
+		color: var(--color1);
+	}
+	.cart-list__delete:hover {
+		text-decoration: underline;
 	}
 }
 

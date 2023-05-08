@@ -66,6 +66,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		}
 		//\\Add to cart//\\
+
+		//\\Open cart\\//
+		if (targetElement.classList.contains('cart-header__icon') || targetElement.closest('.cart-header__icon')) {
+			if (document.querySelector('.cart-list').children.length > 0) {
+				console.log(1)
+				document.querySelector('.cart-header').classList.toggle('_active');
+			}
+			e.preventDefault();
+		} else if (!targetElement.classList.contains('actions__button') && !targetElement.closest('.cart-header')) {
+			document.querySelector('.cart-header').classList.remove('_active');
+		}
+		//\\Open cart//\\
 	}
 
 	//\\accordion\\//
@@ -376,7 +388,7 @@ function updateCart(productButton, itemProductId, productAdd = true) {
 	const cart = document.querySelector('.cart-header');
 	const cartIcon = cart.querySelector('.cart-header__icon');
 	const cartQuantity = cartIcon.querySelector('span');
-	const cartProduct = document.querySelector(`[data-product-id="${itemProductId}"]`);
+	const cartProduct = document.querySelector(`[data-cart-product-id="${itemProductId}"]`);
 	const cartList = document.querySelector('.cart-list');
 
 	// Add
@@ -386,5 +398,25 @@ function updateCart(productButton, itemProductId, productAdd = true) {
 		} else {
 			cartIcon.insertAdjacentHTML('beforeend', `<span>1</span>`);
 		}
+
+		if (!cartProduct) {
+			const product = document.querySelector(`[data-product-id="${itemProductId}"]`);
+			const cartProductImage = product.querySelector('.item-product__image').innerHTML;
+			const cartProductTitle = product.querySelector('.item-product__title').innerHTML;
+			const cartProductContent = `
+			<a href="" class="cart-list__image _ibg">${cartProductImage}</a>
+			<div class="cart-list__body">
+				<a href="" class="cart-list__title">${cartProductTitle}</a>
+				<div class="cart-list__quantity">Quantity: <span>1</span></div>
+				<a href="" class="cart-list__delete">Delete</a>
+			</div>
+			`;
+			cartList.insertAdjacentHTML('beforeend', `<li data-cart-product-id="${itemProductId}" class="class-list__item">${cartProductContent}</li>`);
+
+		} else {
+			const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span');
+			cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML;
+		}
+		productButton.classList.remove('_hold');
 	}
 }
