@@ -57,6 +57,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		}
 		//\\More Products//\\
+
+		//\\Add to cart\\//
+		if (targetElement.classList.contains('actions__button')) {
+			const itemProductId = targetElement.closest('.item-product').dataset.productId;
+			addToCart(targetElement, itemProductId);
+			e.preventDefault();
+
+		}
+		//\\Add to cart//\\
 	}
 
 	//\\accordion\\//
@@ -310,4 +319,72 @@ function loadProducts(data) {
 
 		productsItems.insertAdjacentHTML('beforeend', productTemplate);
 	})
+}
+
+// Add to Cart
+function addToCart(productButton, itemProductId) {
+	if (!productButton.classList.contains('_hold')) {
+		productButton.classList.add('_hold');
+		productButton.classList.add('_fly');
+
+		const cart = document.querySelector('.cart-header__icon');
+		const product = document.querySelector(`[data-product-id="${itemProductId}"]`);
+		const productImage = product.querySelector('.item-product__image');
+
+		const productImageFly = productImage.cloneNode(true);
+
+		const productImageFlyWidth = productImage.offsetWidth;
+		const productImageFlyHeight = productImage.offsetHeight;
+		const productImageFlyTop = productImage.getBoundingClientRect().top;
+		const productImageFlyLeft = productImage.getBoundingClientRect().left;
+
+		productImageFly.setAttribute('class', '_flyImage _ibg');
+		productImageFly.style.cssText =
+			`
+		left: ${productImageFlyLeft}px;
+		top: ${productImageFlyTop}px;
+		width: ${productImageFlyWidth}px;
+		height: ${productImageFlyHeight}px;
+		`;
+
+		document.body.append(productImageFly);
+
+		const cartFlyLeft = cart.getBoundingClientRect().left;
+		const cartFlyTop = cart.getBoundingClientRect().top;
+
+		productImageFly.style.cssText =
+			`
+		left: ${cartFlyLeft}px;
+		top: ${cartFlyTop}px;
+		width: 0px;
+		height: 0px;
+		opacity: 0;
+		`;
+
+		productImageFly.addEventListener('transitionend', function () {
+			if (productButton.classList.contains('_fly')) {
+				productImageFly.remove();
+				updateCart(productButton, itemProductId);
+				productButton.classList.remove('_fly');
+			}
+		});
+	}
+}
+
+// Update cart
+function updateCart(productButton, itemProductId, productAdd = true) {
+	const cart = document.querySelector('.cart-header');
+	const cartIcon = cart.querySelector('.cart-header__icon');
+	const cartQuantity = cartIcon.querySelector('span');
+	const cartProduct = document.querySelector(`[data-product-id="${itemProductId}"]`);
+	const cartList = document.querySelector('.cart-list');
+
+	// Add
+	if (productAdd) {
+		if (cartQuantity) {
+			cartQuantity.innerHTML = ++cartQuantity.innerHTML;
+		} else {
+			cartIcon.insertAdjacentHTML('beforeend', `<span>1</span>`);
+		}
+	}
 }
