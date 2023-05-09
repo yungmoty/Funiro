@@ -873,7 +873,7 @@ body._lock {
 	color: red;
 	font-size: 14px;
 }
-.class-list__item {
+.cart-list__item {
 	display: flex;
 	align-items: flex-end;
 }
