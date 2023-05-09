@@ -796,6 +796,10 @@ body._lock {
 	border: 1px solid var(--color1);
 	min-width: 245px;
 }
+.products__more._hold {
+	opacity: 0.4;
+	cursor: default;
+}
 .btn_white {
 }
 /* ================ */
@@ -813,6 +817,10 @@ body._lock {
 }
 .actions__button:not(:last-child) {
 	margin: 0px 0px 24px 0px;
+}
+.actions__button._hold {
+	opacity: 0.4;
+	cursor: default;
 }
 .actions__link {
 	display: flex;
@@ -873,7 +881,7 @@ body._lock {
 	color: red;
 	font-size: 14px;
 }
-.class-list__item {
+.cart-list__item {
 	display: flex;
 	align-items: flex-end;
 }
