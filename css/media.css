@@ -152,6 +152,9 @@
 	.cart-header__body {
 		top: 50px;
 	}
+	.rooms__body {
+		margin: 0px 0px 30px 0px;
+	}
 }
 
 /* sm <= Medium (--md3) */
@@ -402,6 +405,10 @@
 		left: 0;
 		width: 100%;
 	}
+	.slider-rooms__dotts {
+		justify-content: center;
+		padding: 15px 0px 0px 0px;
+	}
 }
 
 /* xs <= Small (--md4) */
@@ -462,6 +469,18 @@
 	.advantages {
 		padding-top: 30px;
 		padding-bottom: 30px;
+	}
+	.slider-rooms__slide {
+		width: 100%;
+	}
+	.slider-rooms__slide.swiper-slide-active .slider-rooms__image {
+		height: 420px;
+	}
+	.slider-rooms__image {
+		height: 350px;
+	}
+	.rooms__slider {
+		margin: 0 -15px;
 	}
 }
 
@@ -531,6 +550,18 @@
 	.slider__body {
 		width: 710px;
 	}
+	.swiper-pagination-bullets.swiper-pagination-horizontal.slider-rooms__dotts {
+		position: absolute;
+		bottom: 30px;
+		width: 100%;
+		left: 400px;
+	}
+	.slider-rooms__slide.swiper-slide-active .slider-rooms__image {
+		height: 470px;
+	}
+	.slider-rooms__image {
+		height: 393px;
+	}
 }
 
 /* Large (--md2) */
@@ -573,6 +604,18 @@
 	.header._scroll .header__body {
 		min-height: 70px;
 	}
+	.rooms__container {
+		display: flex;
+	}
+	.rooms__body {
+		padding-right: calc(30px + (80 - 30) * ((100vw - 320px) / (1270 - 320)));
+	}
+	.slider-rooms__slide.swiper-slide-active .slider-rooms__image {
+		height: 523px;
+	}
+	.slider-rooms__image {
+		height: 437px;
+	}
 }
 
 /* Extra large (xl) */
@@ -582,11 +625,21 @@
 	.content-main {
 		padding: 60px;
 	}
+	.slider-rooms__slide.swiper-slide-active .slider-rooms__image {
+		height: 582px;
+	}
+	.slider-rooms__image {
+		height: 486px;
+	}
 }
 
 /* Extra extra large (xxl) */
-@media (min-width: 1400px) {
+@media (min-width: 1300px) {
 	[class*="__container"] {
+	}
+	.slider-rooms__arrows {
+		width: calc(100% + 48px);
+		left: -24px;
 	}
 }
 
@@ -670,6 +723,9 @@
 	}
 	.cart-list__delete:hover {
 		text-decoration: underline;
+	}
+	.rooms__button:hover {
+		background: #ee8e53;
 	}
 }
 

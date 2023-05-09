@@ -178,7 +178,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 	//\\form//\\
 
-	//\\swiper\\//
+	//\\swiper-main\\//
 	if (document.querySelector('.slider__body')) {
 		new Swiper('.slider__body', {
 			observer: true,
@@ -203,7 +203,34 @@ window.addEventListener('DOMContentLoaded', function () {
 			},
 		})
 	};
-	//\\swiper//\\
+	//\\swiper-main//\\
+
+	//\\swiper-rooms\\//
+	if (document.querySelector('.slider-rooms__body')) {
+		new Swiper('.slider-rooms__body', {
+			observer: true,
+			observeParents: true,
+			slidesPerView: 'auto',
+			spaceBetween: 24,
+			watchOverflow: true,
+			speed: 800,
+			loop: true,
+			loopAdditionalSlides: 5,
+			preloadImages: false,
+			parallax: true,
+			// Dotts
+			pagination: {
+				el: '.slider-rooms__dotts',
+				clickable: true
+			},
+			// Arrows
+			navigation: {
+				prevEl: '.slider-rooms .slider-arrow_prev',
+				nextEl: '.slider-rooms .slider-arrow_next'
+			},
+		})
+	};
+	//\\swiper-rooms//\\
 
 	//\\header\\//
 	const headerElement = document.querySelector('.header');
