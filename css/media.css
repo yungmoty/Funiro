@@ -740,6 +740,13 @@
 	.furniture__items {
 		justify-content: center;
 	}
+	.row-furniture__item img {
+		transition: all 0.5s ease 0s;
+		filter: grayscale(1);
+	}
+	.row-furniture__item:hover img {
+		filter: grayscale(0);
+	}
 }
 
 @media (any-hover: none) {

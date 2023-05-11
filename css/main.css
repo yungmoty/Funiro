@@ -1156,15 +1156,22 @@ body._lock {
 
 .row-furniture {
 }
-.row-furniture_left-top {
-}
 .row-furniture__item {
 }
+.row-furniture_left-top {
+	justify-content: end;
+	align-items: end;
+}
 .row-furniture_left-bottom {
+	justify-content: end;
+	align-items: start;
 }
 .row-furniture_center {
+	display: block;
 }
 .row-furniture_right-top {
+	align-items: end;
 }
 .row-furniture_right-bottom {
+	align-items: start;
 }
