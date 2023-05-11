@@ -737,10 +737,17 @@
 	.slider-tips__title:hover {
 		color: var(--color1);
 	}
+	.furniture__items {
+		justify-content: center;
+	}
 }
 
 @media (any-hover: none) {
 	.actions {
 		padding: 15px 0px 0px 0px;
+	}
+	.furniture__body {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 }
