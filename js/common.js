@@ -25,7 +25,7 @@ const isMobile = {
 	}
 }
 
-window.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
 	document.addEventListener('click', documentActions);
 
 	function documentActions(e) {
@@ -231,6 +231,47 @@ window.addEventListener('DOMContentLoaded', function () {
 		})
 	};
 	//\\swiper-rooms//\\
+
+	//\\swiper-tips\\//
+	if (document.querySelector('.slider-tips__body')) {
+		new Swiper('.slider-tips__body', {
+			observer: true,
+			observeParents: true,
+			slidesPerView: 3,
+			spaceBetween: 32,
+			watchOverflow: true,
+			speed: 800,
+			loop: true,
+			// Dotts
+			pagination: {
+				el: '.slider-tips__dotts',
+				clickable: true
+			},
+			// Arrows
+			navigation: {
+				prevEl: '.slider-tips .slider-arrow_prev',
+				nextEl: '.slider-tips .slider-arrow_next'
+			},
+			breakpoints: {
+				// wh >= 320
+				320: {
+					slidesPerView: 1.1,
+					spaceBetween: 15,
+				},
+				// wh >= 768
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				// wh >= 992
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 32,
+				},
+			}
+		})
+	};
+	//\\swiper-tips//\\
 
 	//\\header\\//
 	const headerElement = document.querySelector('.header');

@@ -1038,7 +1038,70 @@ body._lock {
 	z-index: 5;
 	justify-content: space-between;
 }
-.slider-arrows {
+
+/* ===== Page#4 ===== */
+.tips {
+	padding-top: calc(30px + (44 - 30) * ((100vw - 320px) / (1270 - 320)));
+	padding-bottom: calc(30px + (44 - 30) * ((100vw - 320px) / (1270 - 320)));
 }
-.slider-rooms__dotts {
+.tips__container {
+}
+.tips__title {
+}
+
+/* swiper-tips */
+.slider-tips {
+	position: relative;
+}
+.slider-tips__body {
+	/* Решение проблемы с box-shadow  */
+	overflow: hidden;
+	margin-right: calc(-15px + (-32 - -15) * ((100vw - 320px) / (1270 - 320)));
+	margin-left: calc(-15px + (-32 - -15) * ((100vw - 320px) / (1270 - 320)));
+	padding: calc(15px + (25 - 15) * ((100vw - 320px) / (1270 - 320)));
+}
+.slider-tips__slide {
+	display: flex;
+	flex-direction: column;
+	transition: box-shadow 0.3s ease 0s;
+}
+.slider-tips__image {
+	padding: 0 0 calc(251 / 391 * 100%) 0;
+}
+.slider-tips__content {
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	flex: 1 1 auto;
+	align-items: flex-start;
+}
+.slider-tips__title {
+	flex: 1 1 auto;
+	color: inherit;
+	font-weight: 600;
+	line-height: 120%;
+	font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1270 - 320)));
+	transition: color 0.3s ease 0s;
+}
+.slider-tips__title:not(:last-child) {
+	margin: 0px 0px calc(8 / 24 * 1em) 0px;
+}
+.slider-tips__text {
+	color: var(--color2);
+	font-size: 14px;
+	line-height: 150%;
+}
+.slider-tips__dotts {
+	padding-top: calc(0px + (8 - 0) * ((100vw - 320px) / (1270 - 320)));
+	justify-content: center;
+}
+.slider-tips__arrows {
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: calc(100% - 48px);
+	left: 24px;
+	z-index: 5;
+	justify-content: space-between;
 }

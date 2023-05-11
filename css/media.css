@@ -641,6 +641,10 @@
 		width: calc(100% + 48px);
 		left: -24px;
 	}
+	.slider-tips__arrows {
+		width: calc(100% + 48px);
+		left: -24px;
+	}
 }
 
 /* === SPECIAL === */
@@ -726,6 +730,12 @@
 	}
 	.rooms__button:hover {
 		background: #ee8e53;
+	}
+	.slider-tips__slide:hover {
+		box-shadow: 0 0 32px rgba(97, 97, 97, 0.2);
+	}
+	.slider-tips__title:hover {
+		color: var(--color1);
 	}
 }
 
