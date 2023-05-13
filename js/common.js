@@ -93,6 +93,23 @@ document.addEventListener('DOMContentLoaded', function () {
 			e.preventDefault();
 		}
 		//\\plus kart//\\
+
+		// if (targetElement.closest('._gallery')) {
+		// 	const gallery = document.querySelector('._gallery');
+		// 	const imageGallery = document.querySelectorAll('.row-furniture__item img');
+		// 	imageGallery.forEach(img => {
+		// 		img.addEventListener('click', function (e) {
+		// 			document.querySelector('.pop-up').style.display = 'block';
+		// 			document.querySelector('.pop-up img').src = img.getAttribute('src');
+
+		// 		});
+		// 	})
+		// 	document.querySelector('.pop-up span').onclick = () => {
+		// 		document.querySelector('.pop-up').style.display = 'none';
+		// 	}
+		// 	e.preventDefault();
+		// }
+
 	}
 
 	//\\accordion\\//

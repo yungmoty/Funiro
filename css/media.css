@@ -745,6 +745,7 @@
 		/* filter: grayscale(1); */
 	}
 	.row-furniture__item:hover img {
+		transform: scale(1.05);
 		/* filter: grayscale(0); */
 	}
 	.cart-list-btn:hover {

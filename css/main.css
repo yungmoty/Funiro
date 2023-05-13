@@ -1170,7 +1170,7 @@ body._lock {
 .furniture__row {
 	display: inline-grid;
 	padding: 0 8px;
-	gap: 16;
+	gap: 16px;
 	grid-template-columns: auto;
 	grid-auto-flow: column;
 }
@@ -1198,4 +1198,21 @@ body._lock {
 }
 .row-furniture_right-bottom {
 	align-items: start;
+}
+
+.fslightbox-slide-btn {
+	border-radius: 50%;
+}
+.fslightbox-slide-number-container {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+.fslightbox-toolbar-button[title="Enter fullscreen"] {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+.fslightbox-toolbar {
+	background: none;
 }
