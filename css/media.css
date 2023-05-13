@@ -726,7 +726,7 @@
 		color: var(--color1);
 	}
 	.cart-list__delete:hover {
-		text-decoration: underline;
+		/* text-decoration: underline; */
 	}
 	.rooms__button:hover {
 		background: #ee8e53;
@@ -742,10 +742,13 @@
 	}
 	.row-furniture__item img {
 		transition: all 0.5s ease 0s;
-		filter: grayscale(1);
+		/* filter: grayscale(1); */
 	}
 	.row-furniture__item:hover img {
-		filter: grayscale(0);
+		/* filter: grayscale(0); */
+	}
+	.cart-list-btn:hover {
+		background: #ee8e53;
 	}
 }
 

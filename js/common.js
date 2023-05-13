@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		//\\Open cart\\//
 		if (targetElement.classList.contains('cart-header__icon') || targetElement.closest('.cart-header__icon')) {
 			if (document.querySelector('.cart-list').children.length > 0) {
-				console.log(1)
 				document.querySelector('.cart-header').classList.toggle('_active');
 			}
 			e.preventDefault();
@@ -86,6 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
 			e.preventDefault();
 		}
 		//\\Remove from cart//\\
+
+		//\\plus cart\\//
+		if (targetElement.classList.contains('cart-list__add')) {
+			const itemCartProductId = targetElement.closest('.cart-list__item').dataset.cartProductId;
+			updateCart(targetElement, itemCartProductId, true);
+			e.preventDefault();
+		}
+		//\\plus kart//\\
 	}
 
 	//\\accordion\\//
@@ -294,9 +301,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	if (furtinure && !isMobile.any()) {
 		const furtinureItems = document.querySelector('.furniture__items');
-		const furtinureColumn = document.querySelectorAll('.furtinure__column');
+		const furtinureColumn = document.querySelectorAll('.furniture__column');
 
-		const speed = 0.001;
+		const speed = 0.01;
 
 		let positionX = 0;
 		let coordXprocent = 0;
@@ -314,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			positionX = positionX + (distX * speed);
 			let position = furtinureDifferent / 200 * positionX;
 
-			furtinureItems.style.cssText = `transform: translate3d(${position}px, 0, 0);`;
+			furtinureItems.style.cssText = `transform: translate3d(${-position}px, 0, 0);`;
 
 			if (Math.abs(distX) > 0) {
 				requestAnimationFrame(galleryParallax);
@@ -324,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		furtinure.addEventListener('mousemove', function (e) {
 			const furtinureWidth = furtinure.offsetWidth;
+			// ноль по середине
 			const coordX = e.pageX - furtinureWidth / 2;
 
 			coordXprocent = coordX / furtinureWidth * 200;
@@ -530,8 +538,11 @@ function updateCart(productButton, itemProductId, productAdd = true) {
 			<a href="" class="cart-list__image _ibg">${cartProductImage}</a>
 			<div class="cart-list__body">
 				<a href="" class="cart-list__title">${cartProductTitle}</a>
-				<div class="cart-list__quantity">Quantity: <span>1</span></div>
-				<a href="" class="cart-list__delete">Delete</a>
+				<div class="cart-list__controls">
+					<a href="" class="cart-list__delete cart-list-btn">-</a>					
+					<div class="cart-list__quantity"><span>1</span></div>
+					<a href="" class="cart-list__add cart-list-btn">+</a>
+				</div>				
 			</div>
 			`;
 			cartList.insertAdjacentHTML('beforeend', `<li data-cart-product-id="${itemProductId}" class="cart-list__item">${cartProductContent}</li>`);
@@ -541,6 +552,9 @@ function updateCart(productButton, itemProductId, productAdd = true) {
 			cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML;
 		}
 		productButton.classList.remove('_hold');
+	} else if (cartProduct >= 1) {
+		const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span');
+		cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML;
 	} else {
 		// Delete
 		const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span');
